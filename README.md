@@ -1,158 +1,119 @@
 # 🎵 Fallout Radio - Wasteland Broadcasting System
 
 ![Fallout Radio](https://img.shields.io/badge/Fallout-Radio-00ff00?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.0.0-00ff00?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-2.0.0-00ff00?style=for-the-badge)
 ![Status](https://img.shields.io/badge/status-Online-00ff00?style=for-the-badge)
 
-An authentic **Fallout-themed web radio player** featuring music from all Fallout games (Fallout 3, New Vegas, 4, and 76) with a stunning Pip-Boy inspired interface complete with CRT effects, scanlines, and customizable color themes.
+A synchronized **Fallout-themed web radio player** that streams music from all Fallout games (Fallout 3, New Vegas, 4, and 76) with an authentic Pip-Boy 3000 terminal interface. Everyone hears the same song at the same time - just like a real radio station!
 
 ## ✨ Features
 
-### 🎮 Authentic Fallout Experience
-- **Pip-Boy 3000 Mk IV Interface** - Authentic wasteland terminal aesthetic
-- **CRT Screen Effects** - Realistic cathode ray tube monitor simulation with flickering and scanlines
-- **Multiple Color Themes** - Classic Green, Amber, White, and Blue (just like in the games!)
-- **Retro Typography** - Monospace fonts for that authentic terminal feel
+### 🎮 Authentic Pip-Boy Experience
+- **Authentic Pip-Boy 3000 Interface** - Exact replica of the in-game terminal
+- **CRT Screen Effects** - Realistic phosphor glow, scanlines, and screen flicker
+- **Fullscreen Immersive Design** - Fills your entire screen for maximum immersion
+- **Vault Boy Background** - Iconic Fallout mascot with subtle overlay
+- **Retro Monospace Typography** - Just like the real Pip-Boy
 
-### 📻 Radio Stations
-All radio stations from across the Fallout universe:
-
-#### Fallout 3
-- **Galaxy News Radio** (GNR) - Hosted by Three Dog
-- **Enclave Radio** - President John Henry Eden's patriotic broadcasts
-- **Agatha's Station** - Classical violin music
-
-#### Fallout: New Vegas
-- **Radio New Vegas** - Hosted by Mr. New Vegas
-- **Mojave Music Radio** - Country and western classics
-- **Black Mountain Radio** - Tabitha's... interesting broadcasts
+### 📻 Radio Stations (8 Total)
 
 #### Fallout 4
-- **Diamond City Radio** - Travis "Lonely" Miles
-- **Classical Radio** - Orchestral masterpieces
+- **Diamond City Radio** - 106 tracks hosted by Travis "Lonely" Miles
+- **Classical Radio** - 29 orchestral masterpieces
+
+#### Fallout 3
+- **Galaxy News Radio** - 40 tracks with Three Dog
+- **Enclave Radio** - President Eden's continuous broadcast
+
+#### Fallout: New Vegas
+- **Radio New Vegas** - 40 tracks with Mr. New Vegas
+- **Black Mountain Radio** - 30 tracks from Tabitha
+- **Mojave Music Radio** - Continuous broadcast
 
 #### Fallout 76
-- **Appalachia Radio** - Country roads take me home
-- **Classical Radio (76)** - More timeless classics
+- **Appalachia Radio** - 51 tracks including "Country Roads"
 
-### 🎵 Features
-- **Synchronized Playback** - Everyone hears the same song at the same time (designed for streaming)
-- **Now Playing Display** - See current track, artist, and album information
-- **Visual Waveform** - Animated audio visualizer
-- **Playlist View** - See upcoming tracks
-- **Station Information** - Learn about each station and its host
-- **Statistics Tracking** - Monitor listening time and session stats
-- **Keyboard Shortcuts** - Control playback with keyboard
-- **Responsive Design** - Works on desktop, tablet, and mobile
-
-### 🎨 Customization
-- **4 Color Themes** inspired by Fallout games
-- **Persistent Settings** - Your theme choice is saved
+### 🎵 Core Features
+- **🌐 Synchronized Global Playback** - Everyone worldwide hears the same song at the same time
+- **♾️ Continuous Broadcasting** - Radio never stops, plays 24/7 in a loop
+- **🔄 Auto-Sync System** - Automatically corrects drift every 30 seconds
+- **📡 YouTube Streaming** - High-quality audio from timestamped YouTube videos
+- **🎚️ Volume Control** - Adjust volume with live percentage display
+- **📋 Playlist Preview** - See upcoming tracks
+- **ℹ️ Now Playing Display** - Current track, artist, and station info
+- **📊 Session Statistics** - Track count and listening time
+- **📱 Fully Responsive** - Works perfectly on all devices
 - **Smooth Transitions** - Beautiful theme switching animations
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (for CORS compatibility with audio files)
+
+## 🚀 Quick Start
 
 ### Installation
 
-1. **Clone or Download** this repository to your computer
-
-2. **Add Your Music Files**
-   
-   Create a `music` folder structure:
-   ```
-   Fallout Radio/
-   ├── music/
-   │   ├── fo3/          (Fallout 3 songs)
-   │   ├── fonv/         (Fallout: New Vegas songs)
-   │   ├── fo4/          (Fallout 4 songs)
-   │   └── fo76/         (Fallout 76 songs)
-   ├── index.html
-   ├── styles.css
-   ├── app.js
-   ├── stations.js
-   └── themes.js
-   ```
-
-3. **Start a Local Server**
-
-   **Option 1: Using Python**
+1. **Clone or Download** this repository
    ```bash
-   # Python 3
+   git clone https://github.com/beepboopilaamari/Fallout-Radio.git
+   cd Fallout-Radio
+   ```
+
+2. **Start a Local Server**
+   ```bash
+   # Using Python 3
    python -m http.server 8000
-   
-   # Python 2
-   python -m SimpleHTTPServer 8000
    ```
 
-   **Option 2: Using Node.js (http-server)**
-   ```bash
-   npx http-server -p 8000
+3. **Open in Browser**
+   ```
+   http://localhost:8000
    ```
 
-   **Option 3: Using VS Code**
-   - Install the "Live Server" extension
-   - Right-click on `index.html` and select "Open with Live Server"
+That's it! The radio will start playing automatically.
 
-4. **Open in Browser**
-   
-   Navigate to: `http://localhost:8000`
+## 🌐 Live Demo
 
-## 🎼 Adding Your Music
+Visit the live site: **[Your GitHub Pages URL here]**
 
-### Getting Fallout Music
+## � How It Works
 
-**IMPORTANT**: You must own the music legally. Here are legitimate ways to get Fallout soundtracks:
+### Synchronized Broadcasting
+- Uses a global epoch time (October 28, 2025 midnight) as reference
+- Calculates current position in playlist based on elapsed time
+- All users worldwide are synchronized to the same track and position
+- Auto-corrects drift every 30 seconds to maintain perfect sync
 
-1. **Purchase from Official Sources**:
-   - Steam (game soundtracks often included with purchase)
-   - iTunes/Apple Music
-   - Amazon Music
-   - Spotify (for streaming, not downloading)
-   - Bethesda.net
-
-2. **Extract from Games** (if you own them):
-   - Fallout 3: `Data\Sound\fx\mus`
-   - Fallout: New Vegas: `Data\Sound\songs`
-   - Fallout 4: `Data\Sound\fx\mus`
-   - Use tools like Fallout Mod Manager or extract .ba2/.bsa files
-
-3. **Official Soundtrack Albums**:
-   - Many tracks are available on music platforms as official albums
-
-### Configuring Music Files
-
-Edit `stations.js` and update the `url` field for each track to match your file structure:
-
-```javascript
-{
-    title: "I Don't Want to Set the World on Fire",
-    artist: "The Ink Spots",
-    album: "Fallout 3 OST",
-    url: "music/fo3/i-dont-want-to-set-the-world-on-fire.mp3"
-}
-```
-
-**Supported formats**: MP3, OGG, WAV, M4A
+### YouTube Integration
+- Streams audio from timestamped YouTube videos
+- Each track has a precise `startTime` in the video
+- Seamlessly transitions between tracks within the same video
+- No downloads required - streams on-demand
 
 ## 🎮 Usage
 
 ### Basic Controls
+- **Select Station** - Click any station in the left sidebar
+- **Adjust Volume** - Use the volume slider (0-100%)
+- **Switch Stations** - Click any station without interrupting playback
+- **View Playlist** - See upcoming tracks in the "UP NEXT" section
 
-- **Select a Station** - Click on any station in the left sidebar
-- **Play/Pause** - Click the play button or press `SPACE`
-- **Mute** - Click the mute button or press `M`
-- **Next Track** - Press `→` (Right Arrow)
-- **Volume** - Use the volume slider
+### Navigation Tabs
+- **Radio** - Main player interface (default)
+- **Stats** - View session statistics
+- **Data** - Additional information
+- **Map** - Placeholder for future features
+- **Inv** - Placeholder for future features
 
-### Theme Switching
+## 🎨 Customization
 
-1. Click the "🎨 THEME" button in the footer
-2. Select your preferred color scheme:
-   - **Classic Green** - The iconic Pip-Boy green
+### Theme Colors
+The site includes a theme system in `themes.js` with 4 color schemes:
+- **Classic Green** (default) - The iconic Pip-Boy phosphor green
+- **Amber** - Warm amber CRT glow
+- **White** - High-contrast white phosphor
+- **Blue** - Cool blue terminal aesthetic
+
+To change themes, modify the theme switcher in the code or add UI controls.
    - **Amber** - Warm amber/orange tones
    - **White** - High-contrast monochrome
    - **Blue** - Cool blue terminals
@@ -186,194 +147,141 @@ Use services like:
 - **Mixcloud** (for pre-recorded shows)
 - **Radio.co**
 - **Live365**
-- **Spreaker**
 
-### Option 3: WebRTC for P2P Streaming
+## 📂 Project Structure
 
-Implement WebRTC for peer-to-peer audio streaming (advanced).
+```
+Fallout-Radio/
+├── index.html              # Main HTML structure
+├── pipboy.css             # Authentic Pip-Boy styling with CRT effects
+├── app.js                 # Main application logic and sync system
+├── youtube-player.js      # YouTube IFrame API wrapper
+├── youtube-stations.js    # Station database with 300+ timestamped tracks
+├── themes.js              # Color theme system (green/amber/white/blue)
+├── vaultboy-bg.jpg       # Background image
+├── favicon.gif           # Animated Vault Boy favicon
+├── README.md             # This file
+└── LICENSE               # MIT License
+```
 
-## 📝 Customization
+## 🔧 Technical Details
 
-### Adding New Stations
+### Technologies Used
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **API**: YouTube IFrame API v3
+- **Hosting**: Static site (works on any web host)
+- **Audio**: YouTube video streaming with timestamp control
 
-Edit `stations.js`:
+### How Synchronization Works
+1. Global epoch time set to October 28, 2025 00:00:00
+2. Calculate seconds elapsed since epoch
+3. Use modulo to find position in playlist loop
+4. Calculate track index from consecutive `startTime` differences
+5. Seek to exact position within track
+6. Repeat check every 30 seconds to maintain sync
+
+### Browser Compatibility
+- Chrome/Edge (recommended)
+- Firefox
+- Safari
+- Opera
+- Any modern browser with ES6+ support
+
+## 🎯 Adding More Stations
+
+Want to add more radio stations? Edit `youtube-stations.js`:
 
 ```javascript
 {
-    name: "Your Custom Station",
-    game: "CUSTOM",
-    description: "Your station description",
-    host: "Your DJ Name",
+    name: "Your Station Name",
+    game: "FALLOUT X",
+    description: "Station description",
+    host: "DJ Name",
+    youtubeVideoId: "YouTube_Video_ID",
     tracks: [
         {
             title: "Song Title",
             artist: "Artist Name",
-            album: "Album Name",
-            url: "music/custom/song.mp3"
+            startTime: 0,  // Start time in seconds
+            type: "song"   // or "commentary"
         }
-        // Add more tracks...
+        // Add more tracks with their timestamps...
     ]
 }
 ```
 
-### Modifying Colors
+## � Troubleshooting
 
-Create new themes in `themes.js`:
+### Radio Not Playing
+- Check browser console for errors
+- Ensure you have internet connection (streams from YouTube)
+- Try refreshing the page with Ctrl+Shift+R
+- Check if YouTube is accessible in your region
 
-```javascript
-'custom-theme': {
-    name: 'My Custom Theme',
-    colors: {
-        primary: '#your-color',
-        secondary: '#your-color',
-        // ... etc
-    }
-}
-```
+### Out of Sync
+- The system auto-corrects every 30 seconds
+- Wait a moment for automatic resync
+- Check your system clock is accurate
 
-### Changing UI Elements
-
-- **HTML Structure**: Edit `index.html`
-- **Styling**: Modify `styles.css`
-- **Behavior**: Update `app.js`
-
-## 🎯 Advanced Features
-
-### Adding DJ Voice Lines
-
-To include DJ commentary (like Three Dog or Mr. New Vegas):
-
-1. Record or extract voice lines from the games
-2. Add them to your music folder
-3. Create special "DJ Commentary" tracks in `stations.js`:
-
-```javascript
-{
-    title: "[DJ Commentary]",
-    artist: "Three Dog",
-    album: "Galaxy News Radio",
-    url: "music/fo3/voicelines/three-dog-01.mp3"
-}
-```
-
-### Adding News Broadcasts
-
-Similar to DJ lines, add authentic news segments:
-
-```javascript
-{
-    title: "[News Report]",
-    artist: "Galaxy News",
-    album: "Wasteland Updates",
-    url: "music/fo3/news/super-mutant-sighting.mp3"
-}
-```
-
-## 🔧 Troubleshooting
-
-### Audio Won't Play
-
-**Issue**: Cross-Origin Resource Sharing (CORS) errors
-
-**Solution**: 
-- Use a local web server (not just opening the HTML file)
-- Ensure audio files are in the correct location
-- Check browser console for specific errors
-
-### Station List Empty
-
-**Issue**: `stations.js` not loading
-
-**Solution**:
-- Verify `stations.js` is in the same folder as `index.html`
-- Check the browser console for JavaScript errors
-- Ensure the file is properly formatted
-
-### Theme Not Saving
-
-**Issue**: LocalStorage disabled or browser in private mode
-
-**Solution**:
-- Enable cookies/storage in browser settings
-- Exit private/incognito browsing mode
-
-### Poor Performance
-
-**Issue**: CRT effects causing lag
-
-**Solution**: Reduce or disable effects in `styles.css`:
-- Comment out `.crt-overlay` animations
-- Reduce `.scanlines` complexity
-- Lower animation frame rates
-
-## 🎨 Screenshots
-
-*(Add your own screenshots here)*
+### Background Image Not Showing
+- Ensure `vaultboy-bg.jpg` is in the same folder as `index.html`
+- Check filename matches exactly (case-sensitive on some servers)
+- Try hard refresh (Ctrl+Shift+R)
 
 ## 📜 License
 
-This is a fan project inspired by the Fallout series. 
+MIT License - See LICENSE file for details
 
-**Important**:
-- Fallout is © Bethesda Softworks
-- Music copyrights belong to their respective artists and labels
-- This project is for personal use only
-- Do not distribute copyrighted music without permission
+**Important Legal Notes**:
+- Fallout franchise © Bethesda Softworks
+- Music rights belong to respective artists/labels
+- This is a fan project for educational/entertainment purposes
+- YouTube content follows their terms of service
+- No copyright infringement intended
 
 ## 🤝 Contributing
 
-Want to improve Fallout Radio? 
+Contributions welcome! To contribute:
 
-- Add new features
-- Fix bugs
-- Improve styling
-- Add more station information
-- Optimize performance
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Feel free to submit pull requests!
+## 🎮 Credits & Inspiration
 
-## 🎮 Credits
+- **Inspired by**: [fallout.radio](https://fallout.radio) by Been Reported
+- **UI Design**: Based on kibibyte's Pip-Boy CSS implementation
+- **Game Series**: Fallout © Bethesda Game Studios
+- **Music**: Various artists featured across Fallout games (3, NV, 4, 76)
 
-- **Inspired by**: fallout.radio by Been Reported
-- **Game Series**: Fallout by Bethesda Game Studios
-- **Music**: Various artists featured in Fallout games
-- **Interface Design**: Based on Pip-Boy 3000 from Fallout series
-
-## 🌟 Features Roadmap
+## 🌟 Roadmap
 
 Future enhancements:
-
-- [ ] Audio spectrum analyzer
-- [ ] Terminal hacking minigame
-- [ ] V.A.T.S. style animations
-- [ ] More interactive elements
-- [ ] Android/iOS app versions
-- [ ] Real-time chat for listeners
-- [ ] Request system
-- [ ] Favorite tracks system
-- [ ] Download playlist as M3U
-- [ ] Integration with Last.fm
-- [ ] Discord Rich Presence
+- [ ] User-selectable themes via UI button
+- [ ] Station search/filter
+- [ ] Keyboard shortcuts for station switching
+- [ ] Audio visualizer animation
+- [ ] "Favorites" system
+- [ ] Share current track feature
+- [ ] Mobile app version
+- [ ] Discord Rich Presence integration
+- [ ] More stations from Fallout 1, 2, and Tactics
 
 ## 📞 Support
 
-Having issues? 
+Having issues? Here's how to get help:
 
-1. Check the troubleshooting section above
-2. Review browser console for errors
-3. Ensure all files are in correct locations
-4. Verify audio file formats are supported
-
-## ⚡ Performance Tips
-
-- Use MP3 files at 128-192 kbps for best balance of quality and performance
-- Optimize large playlists by lazy-loading
-- Consider CDN hosting for faster loading
-- Compress images and assets
-- Enable browser caching
+1. Check the [Troubleshooting](#-troubleshooting) section above
+2. Review browser console for error messages
+3. Ensure all files are present in the directory
+4. Open an issue on GitHub with details
 
 ---
 
-**Remember**: War. War never changes. But your radio experience can be enhanced! 🎵
+**🎵 War. War never changes. But your radio reception can be crystal clear! 🎵**
 
-*Stay tuned to the Wasteland's finest broadcasts, Survivor!*
+*Stay tuned to the Wasteland's finest broadcasts!*
+
+Made with 💚 by the Fallout community
