@@ -1,0 +1,42 @@
+# Music files (don't commit copyrighted content)
+music/*.mp3
+music/*.ogg
+music/*.wav
+music/*.m4a
+music/fo3/*.mp3
+music/fo3/*.ogg
+music/fo3/*.wav
+music/fonv/*.mp3
+music/fonv/*.ogg
+music/fonv/*.wav
+music/fo4/*.mp3
+music/fo4/*.ogg
+music/fo4/*.wav
+music/fo76/*.mp3
+music/fo76/*.ogg
+music/fo76/*.wav
+
+# Keep the README
+!music/README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Node modules (if using any build tools)
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallout Radio - Pip-Boy 3000</title>
+    <link rel="icon" type="image/gif" href="favicon.gif">
+    <link rel="stylesheet" href="pipboy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="bbody">
+    <!-- Pip-Boy Frame -->
+    <div id="frame" class="frame">
+        <div class="piece output">
+            <div class="pipboy">
+                <!-- Top Status Bar -->
+                <h3 class="pip-title">Radio</h3>
+                <ul class="pip-head">
+                    <li><b>HP</b> 100/100</li>
+                    <li><b>AP</b> 40/40</li>
+                    <li>
+                        <span class="fade-a"><b>DT</b> 21</span>
+                        <span class="fade-b"><b>DR</b> 11</span>
+                    </li>
+                    <li><b>TIME</b> <span id="gameTime">07:22pm</span></li>
+                </ul>
+
+                <!-- Main Content Tabs -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="radio" role="tabpanel">
+                        <div class="pip-body">
+                            <!-- Left Side - Station List -->
+                            <ul class="options" id="stationList" role="radiogroup">
+                                <!-- Stations will be injected here -->
+                            </ul>
+
+                            <!-- Right Side - Now Playing Info -->
+                            <div class="info">
+                                <div class="now-playing-section">
+                                    <h4 class="underlined-title">Now Playing</h4>
+                                    <div class="track-info">
+                                        <p class="track-title" id="trackTitle">Select a station...</p>
+                                        <p class="track-artist" id="trackArtist"></p>
+                                        <p class="track-station" id="currentStationName"></p>
+                                    </div>
+                                    
+                                    <div class="volume-control">
+                                        <label><b>VOL</b></label>
+                                        <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                                        <span id="volumeDisplay">70%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Playlist Preview -->
+                                <div class="playlist-section">
+                                    <h4 class="underlined-title">Up Next</h4>
+                                    <ul id="playlistList" class="playlist-list">
+                                        <li>Awaiting station selection...</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Stats -->
+                                <div class="stats-section">
+                                    <ul class="info-table">
+                                        <li><b>Session</b> <span id="sessionTime">00:00</span></li>
+                                        <li><b>Tracks</b> <span id="tracksPlayed">0</span></li>
+                                        <li class="span-2"><b>Status</b> <span id="playerStatus">Idle</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Tab Navigation -->
+                <ul class="pip-foot" role="tablist">
+                    <li><a href="#radio" class="active">Radio</a></li>
+                    <li><a href="#stats" class="disabled">Stats</a></li>
+                    <li><a href="#data" class="disabled">Data</a></li>
+                    <li><a href="#map" class="disabled">Map</a></li>
+                    <li><a href="#inv" class="disabled">Inv</a></li>
+                </ul>
+            </div>
+
+            <!-- CRT Effects -->
+            <div class="piece glow noclick"></div>
+            <div class="piece scanlines noclick"></div>
+        </div>
+    </div>
+
+    <!-- Hidden Players -->
+    <audio id="audioPlayer"></audio>
+    <div id="youtubePlayer"></div>
+
+    <!-- Scripts -->
+    <script src="youtube-stations.js"></script>
+    <script src="youtube-player.js"></script>
+    <script src="themes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
