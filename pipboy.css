@@ -638,10 +638,13 @@ label {
         min-height: 100vh;
         width: 100vw;
         max-height: unset;
+        max-width: 100vw;
         border: none;
         border-radius: 0;
         position: relative;
         margin: 0;
+        box-shadow: none;
+        overflow: visible;
     }
 
     .output {
@@ -649,10 +652,12 @@ label {
         position: relative;
         min-height: 100vh;
         width: 100%;
+        inset: 0;
+        border-radius: 0;
     }
 
     .pipboy {
-        padding: 12px;
+        padding: 12px 8px;
         height: auto;
         min-height: auto;
         border-width: 2px 0;
@@ -665,29 +670,42 @@ label {
 
     /* Header section */
     .pip-head {
+        position: static;
         width: 100%;
-        background: transparent;
-        flex-wrap: wrap;
+        background: linear-gradient(to bottom, var(--black) 0%, rgba(0, 0, 0, 0) 100%);
         margin-bottom: 12px;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        padding: 0;
     }
 
     .pip-head li {
-        width: calc(50% - 8px);
-        border-top: 2px solid;
-        margin-bottom: 8px;
-        margin-top: 0;
-        padding-top: 8px;
-        font-size: 0.75em;
+        float: none;
+        width: auto;
+        border-top: 2px solid rgb(var(--main));
+        margin: 0;
+        padding: 6px 4px 4px 4px;
+        font-size: 0.65em;
         text-align: center;
+        min-width: auto;
+    }
+
+    .pip-head li::before {
+        display: none;
     }
 
     .pip-title {
-        font-size: 14px;
-        left: 15px;
-        top: -10px;
+        font-size: 13px;
+        left: 12px;
+        top: -11px;
         letter-spacing: 0.05em;
+        z-index: 10;
+    }
+
+    .pip-title::after {
+        height: 4px;
+        top: 11px;
     }
 
     /* Station list - stack vertically */
@@ -702,14 +720,14 @@ label {
     }
 
     .options li {
-        margin-bottom: 3px;
+        margin-bottom: 4px;
     }
 
     .options label,
     .options a {
         max-width: 100%;
         padding: 12px 10px 12px 32px;
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
 
     .options label::before,
@@ -729,86 +747,107 @@ label {
     }
 
     .now-playing-section {
-        margin-bottom: 15px;
-        padding: 12px;
-        background: rgba(var(--alt), 0.1);
-        border: 1px solid rgba(var(--main), 0.3);
+        margin-bottom: 12px;
+        padding: 10px;
+        background: rgba(var(--alt), 0.08);
+        border: 1px solid rgba(var(--main), 0.25);
+        border-radius: 2px;
     }
 
     .now-playing h2 {
-        font-size: 1em;
-        margin-bottom: 10px;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
     }
 
     .track-info {
-        padding: 10px 0;
+        padding: 8px 0;
     }
 
     .track-info h3 {
-        font-size: 1.1em;
-        margin-bottom: 5px;
+        font-size: 1.05em;
+        margin-bottom: 4px;
     }
 
     .track-info p {
-        font-size: 0.85em;
+        font-size: 0.8em;
+        margin: 2px 0;
     }
 
     /* Volume control */
     .volume-control {
-        margin-top: 12px;
+        margin-top: 10px;
     }
 
     .volume-control label {
-        font-size: 0.9em;
+        font-size: 0.85em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
     }
 
     input[type="range"] {
         width: 100%;
+        height: 30px;
     }
 
     /* Playlist preview */
     .playlist-section {
-        margin-bottom: 15px;
-        padding: 12px;
+        margin-bottom: 12px;
+        padding: 10px;
         background: rgba(var(--alt), 0.05);
         border: 1px solid rgba(var(--main), 0.2);
+        border-radius: 2px;
     }
 
     .playlist-section h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
     }
 
     .playlist-preview {
-        max-height: 180px;
+        max-height: 160px;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .playlist-item {
-        padding: 8px 5px;
-        font-size: 0.8em;
-        border-bottom: 1px solid rgba(var(--main), 0.15);
+        padding: 7px 5px;
+        font-size: 0.75em;
+        border-bottom: 1px solid rgba(var(--main), 0.12);
     }
 
     .playlist-item:last-child {
         border-bottom: none;
     }
 
+    .playlist-item .track-number {
+        display: inline-block;
+        width: 20px;
+    }
+
     /* Stats section */
     .stats-section {
-        margin-bottom: 15px;
-        padding: 12px;
+        margin-bottom: 12px;
+        padding: 10px;
         background: rgba(var(--alt), 0.05);
         border: 1px solid rgba(var(--main), 0.2);
+        border-radius: 2px;
     }
 
     .stats-section h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
+        font-size: 0.95em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
     }
 
     .stats-grid {
-        font-size: 0.85em;
+        font-size: 0.8em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
     }
 
     /* Footer navigation */
@@ -820,22 +859,25 @@ label {
         left: 0;
         background: var(--black);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: 8px 0;
         z-index: 1000;
         border-top: 2px solid rgb(var(--main));
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
     }
 
     .pip-foot a {
         width: 18%;
-        height: 45px;
+        height: 42px;
         margin: 0 1%;
-        line-height: 43px;
+        line-height: 40px;
         overflow: hidden;
-        font-size: 0.7em;
+        font-size: 0.65em;
         padding: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        text-transform: uppercase;
     }
 
     .pip-foot a::after {
@@ -843,7 +885,8 @@ label {
     }
 
     .pip-foot a.active {
-        background: rgba(var(--main), 0.2);
+        background: rgba(var(--main), 0.25);
+        border: 1px solid rgb(var(--main));
     }
 
     /* Touch-friendly tap targets */
@@ -860,17 +903,26 @@ label {
 
     /* Improve scrollbar visibility */
     *::-webkit-scrollbar {
-        width: 6px;
+        width: 5px;
     }
 
     *::-webkit-scrollbar-thumb {
-        background-color: rgba(var(--main), 0.5);
+        background-color: rgba(var(--main), 0.4);
+        border-radius: 10px;
     }
 
-    /* Background image adjustment */
-    .output {
-        background-size: cover;
-        background-position: center bottom;
+    *::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Scanlines less intense on mobile */
+    .scanlines {
+        opacity: 0.3;
+    }
+
+    /* CRT effects lighter on mobile for performance */
+    .crt-overlay {
+        opacity: 0.5;
     }
 }
 
@@ -881,72 +933,119 @@ label {
     }
 
     .pip-head li {
-        font-size: 0.7em;
-        padding-top: 6px;
+        font-size: 0.6em;
+        padding: 5px 2px 3px 2px;
     }
 
     .pip-title {
-        font-size: 12px;
-        left: 12px;
+        font-size: 11px;
+        left: 10px;
     }
 
     .options label,
     .options a {
-        font-size: 0.9em;
+        font-size: 0.85em;
         padding: 10px 8px 10px 28px;
     }
 
     .track-info h3 {
-        font-size: 1em;
+        font-size: 0.95em;
     }
 
     .track-info p {
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
 
     .playlist-item {
-        font-size: 0.75em;
+        font-size: 0.7em;
         padding: 6px 4px;
     }
 
     .pip-foot a {
-        font-size: 0.65em;
-        height: 40px;
-        line-height: 38px;
+        font-size: 0.6em;
+        height: 38px;
+        line-height: 36px;
     }
 
     .now-playing-section,
     .playlist-section,
     .stats-section {
-        padding: 10px;
-        margin-bottom: 12px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .volume-control label {
+        font-size: 0.8em;
     }
 }
 
 /* Landscape mode fixes */
 @media only screen and (max-height: 500px) and (orientation: landscape) {
     .pipboy {
-        padding: 8px;
+        padding: 8px 6px;
     }
 
     .pip-head {
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
 
-    .options,
-    .info {
-        margin-top: 8px;
+    .pip-head li {
+        padding: 4px 2px 2px 2px;
+    }
+
+    .options li {
+        margin-bottom: 2px;
+    }
+
+    .options label,
+    .options a {
+        padding: 8px 8px 8px 28px;
     }
 
     .playlist-preview {
-        max-height: 120px;
+        max-height: 100px;
     }
 
     .now-playing-section,
     .playlist-section,
     .stats-section {
-        margin-bottom: 10px;
-        padding: 8px;
+        margin-bottom: 8px;
+        padding: 6px;
+    }
+
+    .pip-foot {
+        padding: 5px 0;
+    }
+
+    .pip-foot a {
+        height: 35px;
+        line-height: 33px;
+    }
+}
+
+/* Very small screens */
+@media only screen and (max-width: 360px) {
+    .bbody {
+        font-size: 12px;
+    }
+
+    .pip-head li {
+        font-size: 0.55em;
+        padding: 4px 1px 2px 1px;
+    }
+
+    .pip-title {
+        font-size: 10px;
+    }
+
+    .options label,
+    .options a {
+        padding: 8px 6px 8px 26px;
+        font-size: 0.8em;
+    }
+
+    .pip-foot a {
+        font-size: 0.55em;
     }
 }
 
